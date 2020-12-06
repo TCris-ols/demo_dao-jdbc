@@ -24,10 +24,22 @@ public class Program {
 		System.out.println("\n====   TEST 2: seller FindByDepartment  ====");
 		System.out.print("Localizar vendedores do departamento id: ");
 		int deptId = sc.nextInt();
+		
 		Department department = new Department(deptId,null);
 		List<Seller> list = sellerDao.findById(department);
+		
 		for(Seller obj : list) {
 			System.out.println(obj);
+		}
+		
+		System.out.println("\n====   TEST 3: seller FindAll  ====");
+		System.out.print("Localizar vendedores ");
+	
+		
+		List<Seller> list2 = sellerDao.findAll();
+		
+		for(Seller obj2 : list2) {
+			System.out.println(obj2);
 		}
 	}
 
