@@ -103,10 +103,10 @@ public class Seller implements Serializable{
 
 	@Override
 	public String toString() {
-		return "name: " + name + ", email: " + email + ", Nascimento: " + birthDate + ", Salário: "
-				+ baseSalary + ", Deaprtamento: "+ department.getName()+ "]";
+		return "\nName: " + name + "\nEmail: " + email + "\nData de Nascimento: " + birthDate + "\nSalário: "
+				+ baseSalary + "\nDepartamento: "+ department.getName()+ "]";
 	}
-	
+
 	
 	
 	
