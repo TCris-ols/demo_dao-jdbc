@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 import model.dao.DaoFactory;
 import model.dao.SellerDao;
-import model.entities.Department;
 import model.entities.Seller;
 
 public class Program {
@@ -64,58 +63,34 @@ public class Program {
 		 * System.out.println(seller);
 		 */
 		
-		System.out.println("\n====   TEST 5: seller update  ====");
+		/*
+		 * // System.out.println("\n====   TEST 5: seller update  ===="); // //
+		 * System.out.print("Informe o Id do vendedor a ser atualizado: "); // int
+		 * vendId = sc.nextInt(); // Seller seller = sellerDao.findById(vendId); //
+		 * System.out.println(seller); // // System.out.println(); //
+		 * System.out.println("Qual campo deseja alterar? \n" // + "Name \n" // +
+		 * "Email \n" // + "BirthDate \n" // + "BaseSalary \n" // + "DepartmentId \n" //
+		 * ); // // String campo = sc.next(); // // // Department department = new
+		 * Department(); // // switch (campo){ // case "Name": //
+		 * System.out.print("Altere o nome do vendedor: "); // sc.nextLine(); //
+		 * seller.setName(sc.nextLine()); // break; // case "Email": //
+		 * System.out.print("Altere o email do vendedor: "); //
+		 * seller.setEmail(sc.next()); // break; // case "BirthDate": //
+		 * System.out.print("Altere a data de nascimento do vendedor: "); //
+		 * seller.setBirthDate(sdf.parse(sc.next())); // break; // case "BaseSalary": //
+		 * System.out.print("Altere o Salário do vendedor: "); //
+		 * seller.setBaseSalary(sc.nextDouble()); // break; // case "DepartmentId": //
+		 * System.out.print("Altere o departamento do vendedor: "); // new
+		 * Department(sc.nextInt(), null); // seller.setDepartment(department); //
+		 * break; // default: // System.out.println("Valor inválido!"); // break; // }
+		 */
+		System.out.println("\n====   TEST 6: seller delete  ====");
 
 		System.out.print("Informe o Id do vendedor a ser atualizado: ");
 		int vendId = sc.nextInt();
-		Seller seller = sellerDao.findById(vendId);
-		System.out.println(seller);
-		
-		System.out.println();
-		System.out.println("Qual campo deseja alterar? \n"
-				+ "Name \n"
-				+ "Email \n"
-				+ "BirthDate \n"
-				+ "BaseSalary \n"
-				+ "DepartmentId \n"
-				);
-		
-		String campo = sc.next();
-		
 
-		Department department = new Department();
-				
-		switch (campo){
-		case "Name": 
-			System.out.print("Altere o nome do vendedor: ");
-			sc.nextLine();
-			seller.setName(sc.nextLine()); 
-			break;
-		case "Email":
-			System.out.print("Altere o email do vendedor: ");
-			seller.setEmail(sc.next()); 
-			break;
-		case "BirthDate":
-			System.out.print("Altere a data de nascimento do vendedor: ");
-			seller.setBirthDate(sdf.parse(sc.next()));
-			break;
-		case "BaseSalary":
-			System.out.print("Altere o Salário do vendedor: ");
-			seller.setBaseSalary(sc.nextDouble());
-			break;
-		case "DepartmentId":
-			System.out.print("Altere o departamento do vendedor: ");
-			new Department(sc.nextInt(), null);
-			seller.setDepartment(department);
-			break;
-		default: 
-			System.out.println("Valor inválido!");
-			break;
-		}
+		sellerDao.deleteById(vendId);
 
-		sellerDao.updateSeller(seller);
-
-		System.out.println(seller);
 	}
-
+	
 }

@@ -9,7 +9,7 @@ public interface SellerDao {
 
 	void insertSeller(Seller obj);
 	void updateSeller(Seller obj);
-	void deleteById();
+	void deleteById(int id);
 	Seller findById(Integer id);
 	List<Seller> findAll();
 	List<Seller> findById(Department department);
