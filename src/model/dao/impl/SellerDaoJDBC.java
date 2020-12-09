@@ -95,7 +95,7 @@ public class SellerDaoJDBC implements SellerDao {
 	}
 
 	@Override
-	public void deleteById(int id) {
+	public void deleteById(Integer id) {
 		PreparedStatement st = null;
 		try {
 			st = conn.prepareStatement(
@@ -246,5 +246,7 @@ public class SellerDaoJDBC implements SellerDao {
 			DB.closeResultSet(rs);
 		}
 	}
+
+	
 
 }
